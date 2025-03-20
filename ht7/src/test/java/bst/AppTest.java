@@ -21,6 +21,19 @@ public class AppTest
     @Test
     public void buscarPorSku()
     {
-        // assertTrue( (Price_Retail, Price_Current, Product_Name, Category).equals(buscarPorSku();)));
+        // assertTrue( (Price_Retail, Price_Current, Product_Name, Category).equals(buscarPorSku()) );
+    }
+
+    @Test
+    public void bstOrdenCorrecto()
+    {
+        // assertTrue(bst.ladoIzquierdo < bst.ladoDerecho);
+    }
+
+    @Test
+    public void insertSearch()
+    {
+        // treemap.insert(product);
+        // assertTrue(treemap.contains(product));
     }
 }
