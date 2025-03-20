@@ -5,16 +5,22 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
- * Unit test for simple App.
+ * funciones que deberia de tener la app:
+ * leer csv
+ * input sku, output Price_Retail Price_Current Product_Name Category
  */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
+    public void csvCreated()
     {
-        assertTrue( true );
+        // assertTrue( csv.notEmpty() );
+        
+    }
+
+    @Test
+    public void buscarPorSku()
+    {
+        // assertTrue( (Price_Retail, Price_Current, Product_Name, Category).equals(buscarPorSku();)));
     }
 }
