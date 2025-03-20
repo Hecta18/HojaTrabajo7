@@ -6,8 +6,8 @@ import org.junit.Test;
 
 /**
  * funciones que deberia de tener la app:
- * leer csv
- * input sku, output Price_Retail Price_Current Product_Name Category
+ * -leer csvz
+ * -input sku, output Price_Retail Price_Current Product_Name Category
  */
 public class AppTest 
 {
