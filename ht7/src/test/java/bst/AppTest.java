@@ -8,6 +8,9 @@ import org.junit.Test;
  * funciones que deberia de tener la app:
  * -leer csvz
  * -input sku, output Price_Retail Price_Current Product_Name Category
+ * -bst ordenado por sku
+ * -insertar y buscar en treemap
+ * -eliminar y buscar en treemap
  */
 public class AppTest 
 {
@@ -35,5 +38,12 @@ public class AppTest
     {
         // treemap.insert(product);
         // assertTrue(treemap.contains(product));
+    }
+
+    @Test
+    public void deleteSearch()
+    {
+        // treemap.delete(product);
+        // assertTrue(!treemap.contains(product));
     }
 }
