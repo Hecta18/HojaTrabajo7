@@ -24,5 +24,4 @@ public abstract class AbstractTree <E> implements TreeInterface {
 
     public abstract void insert(E element, Node<E> left, Node<E> right);
     public abstract boolean search(E element);
-    public abstract boolean delete(E element);
 } 
