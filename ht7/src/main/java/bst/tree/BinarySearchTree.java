@@ -1,6 +1,6 @@
 package bst.tree;
 
-public class BuscadorArbolBinario<E extends Comparable<E>> extends AbstractTree<E>{
+public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E>{
     
     @Override
     public void insert(E element, Node<E> left, Node<E> right) {
