@@ -2,26 +2,43 @@ package bst.tree;
 
 public abstract class AbstractTree <E> implements TreeInterface {
     //static = can be used without creating an instance of the class
-    protected abstract static class Node<E> {
+    public static class Node<E> {
         //nested class, has benefits in this situation
-        E element;
-        Node<E> left;
-        Node<E> right;
+        private E element;
+        private Node<E> left;
+        private Node<E> right;
 
-        protected Node(E element) {
+        public Node(E element) {
             this.element = element;
             left = null;
             right = null;
         }
+        //setters
+        protected void setLeft(Node<E> left) {
+            this.left = left;
+        }
+
+        protected void setRight(Node<E> right) {
+            this.right = right;
+        }
+
+        //getters
+        public E getElement() {
+            return element;
+        }
+
+        public Node<E> getLeft() {
+            return left;
+        }
+
+        public Node<E> getRight() {
+            return right;
+        }
     }
-    //variables
-    protected Node<E> root;
 
     //constructor
-    protected AbstractTree() {
-        root = null;
-    }
+    protected AbstractTree() {}
 
-    public abstract void insert(E element, Node<E> left, Node<E> right);
+    public abstract void insert(E element);
     public abstract boolean search(E element);
 } 

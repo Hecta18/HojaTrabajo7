@@ -1,71 +1,44 @@
 package bst.tree;
 
 public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E>{
+    //This ensures that the elements stored in the tree can be compared to each other.
+    private AbstractTree.Node<E> root;
+
+    @Override
+    public void insert(E element) {
+        if (root == null) {
+            root = new AbstractTree.Node<>(element);
+            root.setLeft(null);
+            root.setRight(null); 
+        } else {
+            insertRec(root, element);
+        }    
+    }
+
+    //insertar recursivamente, chequeando nodo por nodo
+    //mira si el nodo es nulo, si es asi crea un nuevo nodo con el elemento
+    //si no es nulo, compara el elemento con el nodo actual
+    // si es menor se va a la izquierda y mayor derecha
+    public Node<E> insertRec(AbstractTree.Node<E> root, E element) {
+        if (element.compareTo(root.getElement()) < 0) {
+            //menor a raiz
+            root.setLeft(insertRec(root.getLeft(), element));
+        } else if (element.compareTo(root.getElement()) > 0) {
+            //mayor a raiz
+            root.setRight(insertRec(root.getRight(), element));
+        }
+        return root;
+    }
     
     @Override
-    public void insert(E element, Node<E> left, Node<E> right) {
-        root = insertRec(root, element);
-    }
-
-    //verifica si es mayor a 0, si es asi lo inserta en la izquierda, si no lo inserta en la derecha
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        // TODO Auto-generated method stub
-        return super.clone();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        // TODO Auto-generated method stub
-        return super.equals(obj);
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        // TODO Auto-generated method stub
-        super.finalize();
-    }
-
-    @Override
-    public int hashCode() {
-        // TODO Auto-generated method stub
-        return super.hashCode();
-    }
-
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
-    }
-
-    @Override
-    public void insert() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public boolean search() {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    public Node<E> insertRec(Node<E> node, E element) {
-        if (node == null) {
-            return new Node<>(element);
-        }
-        if (element.compareTo(node.element) < 0) {
-            node.left = insertRec(node.left, element);
-        } else if (element.compareTo(node.element) > 0) {
-            node.right = insertRec(node.right, element);
-        }
-        return node;
-    }
-
-    //mira si el nodo es nulo, si es asi retorna falso, si no verifica si es igual al nodo, si es asi retorna verdadero
-    @Override
     public boolean search(E element) {
-        return searchRec(root, element);
+        if (root == null) {
+            root = new AbstractTree.Node<>(element);
+            root.setLeft(null);
+            root.setRight(null); 
+        } else {
+            insertRec(root, element);
+        }  
     }
 
     public boolean searchRec(Node<E> node, E element) {
@@ -103,4 +76,6 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E>{
         }
         return minValue;
     }
+
+    
 }

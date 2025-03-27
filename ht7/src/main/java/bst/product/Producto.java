@@ -1,13 +1,13 @@
-package bst.tree;
+package bst.product;
 
-public class ProductoRetail implements Comparable<ProductoRetail> {
+public class Producto implements Comparable<Producto> {
     private String sku;
     private double priceRetail;
     private double priceCurrent;
     private String productName;
     private String category;
 
-    public ProductoRetail(String sku, double priceRetail, double priceCurrent, String productName, String category) {
+    public Producto(String sku, double priceRetail, double priceCurrent, String productName, String category) {
         this.sku = sku;
         this.priceRetail = priceRetail;
         this.priceCurrent = priceCurrent;
@@ -53,7 +53,7 @@ public class ProductoRetail implements Comparable<ProductoRetail> {
     }
 
     @Override
-    public int compareTo(ProductoRetail otro) {
+    public int compareTo(Producto otro) {
         return this.sku.compareTo(otro.sku);
     }
 
