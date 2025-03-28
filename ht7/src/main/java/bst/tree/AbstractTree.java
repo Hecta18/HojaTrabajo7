@@ -1,6 +1,6 @@
 package bst.tree;
 
-public abstract class AbstractTree <E> implements TreeInterface {
+public abstract class AbstractTree<E> {
     //static = can be used without creating an instance of the class
     public static class Node<E> {
         //nested class, has benefits in this situation

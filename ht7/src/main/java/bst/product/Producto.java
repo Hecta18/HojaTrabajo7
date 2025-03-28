@@ -1,13 +1,13 @@
 package bst.product;
 
 public class Producto implements Comparable<Producto> {
-    private String sku;
+    private int sku;
     private double priceRetail;
     private double priceCurrent;
     private String productName;
     private String category;
 
-    public Producto(String sku, double priceRetail, double priceCurrent, String productName, String category) {
+    public Producto(int sku, double priceRetail, double priceCurrent, String productName, String category) {
         this.sku = sku;
         this.priceRetail = priceRetail;
         this.priceCurrent = priceCurrent;
@@ -17,10 +17,10 @@ public class Producto implements Comparable<Producto> {
     //setters getters
     }
 
-    public String getSku() {
+    public int getSku() {
         return sku;
     } 
-    public void setSku(String sku) {
+    public void setSku(int sku) {
         this.sku = sku;
     }
 
@@ -54,7 +54,27 @@ public class Producto implements Comparable<Producto> {
 
     @Override
     public int compareTo(Producto otro) {
-        return this.sku.compareTo(otro.sku);
+        return Integer.compare(this.sku, otro.sku);
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + sku;
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Producto other = (Producto) obj;
+        return sku == other.sku;
     }
 
     @Override
